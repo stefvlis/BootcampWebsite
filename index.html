@@ -2,12 +2,12 @@
 <html lang='en'>
 
 <body style="background-color:darkseagreen">
-    <h1 style="color:rgb(78, 76, 77);">Welkom in het prachtige Eethuis Eet Thuis</h1>
+    <h1 style="text-align:center; color:rgb(78, 76, 77);">Welkom in het prachtige Eethuis Eet Thuis</h1>
     <hr>
-    <img src="restaurantLogo.jpg" width="250" height="200">
+    <p style="text-align:center;"><img src="restaurantLogo.jpg" width="250" height="200" class="right"></p>
     <hr>
-    <h2>Our menu:</h2>
-    <table>
+    <h2 style="text-align:center;">Our menu:</h2>
+    <table style = "margin-left:auto;margin-right:auto;">
         <tr>
             <th>ID</th>
             <th>Item</th>
@@ -81,8 +81,8 @@
         </tr>
     </table>
 
-    <input type="button" onclick="computeTotal()" value = "Naar betalen"></input>
-    <div id="toPay"></div>
+    <div style= "text-align:center"><input type="button" id="betaalKnop" onclick="computeTotal()" value = "Naar betalen" style = "text-align:center;"></input></div>
+    <div id="toPay" style = "text-align:center;"></div>
     <script src="websiteJavascript.js"></script>
 </body>
 

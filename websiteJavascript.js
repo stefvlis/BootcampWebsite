@@ -1,4 +1,5 @@
 var toPay = 0;
+const knop = document.getElementById("betaalKnop")
 
 function addItem(x) {
     toPay += x
@@ -10,6 +11,5 @@ function computeTotal() {
     paragraph.appendChild(message);
     var betalenMessage = document.getElementById("toPay")
     betalenMessage.appendChild(paragraph); 
+    knop.style.display = "none"
 }
-//test
-//test2
