@@ -11,3 +11,4 @@ function computeTotal() {
     var betalenMessage = document.getElementById("toPay")
     betalenMessage.appendChild(paragraph); 
 }
+//test
