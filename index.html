@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<body style="background-color:darkseagreen">
+    <h1 style="color:rgb(78, 76, 77);">Welkom in het prachtige Eethuis Eet Thuis</h1>
+    <hr>
+    <img src="restaurantLogo.jpg" width="250" height="200">
+    <hr>
+    <h2>Our menu:</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>Smoked Salmon</td>
+            <td>6.25</td>
+            <td><input type="button" value = "Order" onclick="addItem(6.25)"></input></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Carrot Soup</td>
+            <td>3.55</td>
+            <td><input type="button" value = "Order" onclick="addItem(3.55)"></input></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Chicken Balerno</td>
+            <td>9.35</td>
+            <td><input type="button" value = "Order" onclick="addItem(9.35)"></input></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Roast Beef</td>
+            <td>10.00</td>
+            <td><input type="button" value = "Order" onclick="addItem(10.00)"></input></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Pizza Americana</td>
+            <td>10.20</td>
+            <td><input type="button" value = "Order" onclick="addItem(10.20)"></input></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Chocolate gateau</td>
+            <td>4.00</td>
+            <td><input type="button" value = "Order" onclick="addItem(4.00)"></input></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Chocolate Cake</td>
+            <td>4.50</td>
+            <td><input type="button" value = "Order" onclick="addItem(4.50)"></input></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Coffee and Mints</td>
+            <td>2.50</td>
+            <td><input type="button" value = "Order" onclick="addItem(2.50)"></input></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Margarita lemon</td>
+            <td>7.00</td>
+            <td><input type="button" value = "Order" onclick="addItem(7.00)"></input></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Cosmopolitan</td>
+            <td>7.99</td>
+            <td><input type="button" value = "Order" onclick="addItem(7.99)"></input></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Moscow Mule</td>
+            <td>3.99</td>
+            <td><input type="button" value = "Order" onclick="addItem(3.99)"></input></td>
+        </tr>
+    </table>
+
+    <input type="button" onclick="computeTotal()" value = "Naar betalen"></input>
+    <div id="toPay"></div>
+    <script src="websiteJavascript.js"></script>
+</body>
+
+</html>
