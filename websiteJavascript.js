@@ -12,3 +12,4 @@ function computeTotal() {
     betalenMessage.appendChild(paragraph); 
 }
 //test
+//test2
