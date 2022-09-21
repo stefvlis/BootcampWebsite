@@ -1,6 +1,7 @@
 // const cors = require("cors");
 // app.use(cors());
 let url = 'https://b10bc-weu-jsonreaderstef-fa.azurewebsites.net/api/HelloWorld'
+let url2 =  "https://b10bc-weu-jsonreaderstef-fa.azurewebsites.net/api/OrderFunction"
 let menu;
 const knop = document.getElementById("betaalKnop");
 var toPay = 0;
@@ -101,4 +102,9 @@ function computeTotal() {
     var betalenMessage = document.getElementById("toPay");
     betalenMessage.appendChild(paragraph);
     knop.style.display = "none";
+    fetch(url2, { method: "POST", body: toPay})
+    .then((response) => response.json())
+    .then((result) => {console.log("Succes:", result);})
+    .catch((error) => { console.log("Error:", error); });
 }
+
