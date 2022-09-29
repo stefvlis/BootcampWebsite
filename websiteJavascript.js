@@ -118,7 +118,7 @@ function computeTotal() {
         },
         body: output,
     })
-        .then((response) => alert("Thank you for the order of " + TotalEuro + " Euro"))
+        .then((response) => alert("Thank you for the order of " + toPay + " Euro"))
         .catch((error) => alert("An error has occured"));
 }
 
