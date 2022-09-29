@@ -1,10 +1,11 @@
 // const cors = require("cors");
 // app.use(cors());
 let url = 'https://b10bc-weu-jsonreaderstef-fa.azurewebsites.net/api/HelloWorld'
-let url2 =  "https://b10bc-weu-jsonreaderstef-fa.azurewebsites.net/api/OrderFunction"
+let url2 = 'https://b10bc-weu-jsonreaderstef-fa.azurewebsites.net/api/OrderFunction'
 let menu;
 const knop = document.getElementById("betaalKnop");
 var toPay = 0;
+var dishList = new Array();
 
 function getJSON() {
     fetch(url, { method: "GET" })
@@ -44,7 +45,7 @@ function printMenu(pMenu) {
     tableRow.appendChild(nameHeader);
     tableRow.appendChild(priceHeader);
     tableRow.appendChild(countHeader);
-    
+
     menuTable.appendChild(tableRow);
 
     pMenu.forEach(menuItem => {
@@ -67,13 +68,13 @@ function printMenu(pMenu) {
         var countText = document.createTextNode(0);
         count.appendChild(countText);
         count.id = menuItem.id
-        
+
         var buttonInTable = document.createElement("td");
         var button = document.createElement("input");
         button.type = "button";
         button.value = "Order";
         button.id = menuItem.id
-        button.onclick = function() {addItem(pMenu[menuItem.id].Price); updateCount(menuItem.id);};
+        button.onclick = function () { addItem(pMenu[menuItem.id].Price, pMenu[menuItem.id].Dish); updateCount(menuItem.id); };
         buttonInTable.appendChild(button);
 
         tableRow.appendChild(idTableData);
@@ -85,8 +86,9 @@ function printMenu(pMenu) {
         menuTable.appendChild(tableRow);
     })
 
-    function addItem(x) {
+    function addItem(x, y) {
         toPay += x;
+        dishList.push(y);
     }
 
     function updateCount(id) {
@@ -102,9 +104,21 @@ function computeTotal() {
     var betalenMessage = document.getElementById("toPay");
     betalenMessage.appendChild(paragraph);
     knop.style.display = "none";
-    fetch(url2, { method: "POST", body: toPay})
-    .then((response) => response.json())
-    .then((result) => {console.log("Succes:", result);})
-    .catch((error) => { console.log("Error:", error); });
+    var dishesList = dishList.toString();
+    var output = `{
+        "Bedrag":${toPay}, "Dishes":"${dishesList}"
+    }`
+    console.log(output)
+
+    fetch(url2, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: output,
+    })
+        .then((response) => alert("Thank you for the order of " + TotalEuro + " Euro"))
+        .catch((error) => alert("An error has occured"));
 }
 
